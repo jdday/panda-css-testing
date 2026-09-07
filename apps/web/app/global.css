@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+/* Master cascade-layer order. Both Tailwind and Panda emit into this document,
+   so the order must be declared explicitly -- otherwise it falls back to
+   first-appearance and Panda's reset lands after the utilities layers.
+   Tailwind's layers first, then Panda's (pd-*), so Panda wins ties. */
+@layer theme, base, components, utilities,
+       pd-reset, pd-base, pd-tokens, pd-recipes, pd-utilities;
