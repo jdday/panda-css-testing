@@ -1,0 +1,15 @@
+{
+  "name": "panda-monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build -w @acme/ui && npm run build -w web",
+    "dev": "npm run dev -w web",
+    "dev:ui": "npm run dev -w @acme/ui",
+    "codegen": "npm run prepare -w @acme/ui && npm run prepare -w web"
+  }
+}
